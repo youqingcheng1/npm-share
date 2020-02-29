@@ -1,0 +1,10 @@
+module.exports = {
+    plugins: {
+      autoprefixer: {},
+      'postcss-pxtorem': {
+        rootValue: 75,
+        propWhiteList: ['*'],
+        selectorBlackList:['pc--']
+      }
+    }
+};

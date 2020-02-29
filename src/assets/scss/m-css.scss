@@ -1,0 +1,92 @@
+body, div, ul, li, ol, h1, h2, h3, h4, h5, h6, input, textarea, select, p, dl, dt, dd, a, img, button, form, table, th, tr, td, tbody, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    margin: 0;
+    padding: 0;
+}
+*{
+    box-sizing: border-box;
+}
+body, button, input, select, textarea {
+    font:12px/1.5 "Microsoft YaHei";
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+    // font-family: SimSun;
+}
+/* 设置HTML5元素为块 */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+  }
+  /* 禁用iPhone中Safari的字号自动调整 */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    /* 解决IOS默认滑动很卡的情况 */
+    -webkit-overflow-scrolling : touch;
+    //   height: 100%;
+      width: 100%;
+  }
+ul,ol,li{
+    list-style: none;
+}
+em, i {
+    font-style: normal;
+}
+strong {
+    font-weight: normal;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+sup { vertical-align:text-top; }
+sub{ vertical-align:text-bottom; }
+legend { color:#000; }
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:100%; outline: none;border: none;}
+table { border-collapse:collapse; border-spacing:0; }
+img {
+    vertical-align: top;
+    max-width: 100%;
+}
+
+// .btn-bg{
+//     background: url('../images/btn-bg.png') no-repeat top center/684px 636px;
+// }
+
+//flex相关
+.flex_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex_around{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.flex_between{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+.flex_column{
+    display: flex;
+    flex-direction: column;
+}
+
+//字体相关
+.font_text{
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+}
+//文本省略号
+.text_overFlow{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.text_overFlow_xxx{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100px;
+}
