@@ -1,8 +1,8 @@
 <template>
 <transition name="share">
-    <div id="share" class="share" @click="handleEvent($event)">
+    <div id="share" class="share" @click="handleEvent($event)" v-if="closeShare">
     <div :class="`${$typePage}--content`" :style="{backgroundImage: 'url(' + baseImg + ')', backgroundSize:'100% 100%', backgroundRepeat: 'no-repeat'}">
-      <!-- <img :class="`${$typePage}--close`" src=""> -->
+      <div :class="`${$typePage}--close`"></div>
       <div :class="`${$typePage}--warp_icon`">
         <ul>
           <li v-for="(item, index) in shareIcon" :key="index">
@@ -67,9 +67,14 @@ export default {
           friendImg:'',
           title:'',
           imgUrl:'',
-          content:''
+          content:'',
+          desc:''
         }
       },
+    closeShare:{
+      type:Boolean,
+      default:true
+    },
     friendIcon:{
       type:Boolean,
       default:true
@@ -118,7 +123,7 @@ export default {
 
     //关闭弹窗
     handleEvent(e) {
-      if (e.target.className === "share" || e.target.className === "close") {
+      if (e.target.className === "share" || e.target.className === "pc--close" || e.target.className === "m--close") {
         this.$emit("close",false);
       } else {
         e.cancelBubble = true;
@@ -137,6 +142,14 @@ export default {
       this.$emit('friendList')
     },
 
+/**
+ * qq,qq空间分享
+ * @param url       链接地址 你需要分享的网站 如：www.baidu.com
+ * @param desc      描述
+ * @param title     标题
+ * @param summary   内容
+ * @param pics      图片
+ */
     shareToQQ() {
       console.log("QQ");
       window.open(
@@ -164,9 +177,9 @@ export default {
       window.open(
         `http://service.weibo.com/share/share.php?url=${encodeURIComponent(
           this.shareData.url
-        )}&pics=${encodeURIComponent(this.shareData.imgUrl)}&title=${
-          this.shareData.title
-        }&desc=${this.shareData.content}`,
+        )}&pic=${encodeURIComponent(this.shareData.imgUrl)}&title=${
+          this.shareData.content
+        }&content=utf-8&sourceUrl=${encodeURIComponent(this.shareData.imgUrl)}`,
         "newwindow",
         "height=750,width=1200,top=100,left=300"
       );
@@ -227,8 +240,8 @@ export default {
       justify-content: center;
       margin: 0 auto;
       ul {
-        // width: 602px;
-        height: 324px;
+        width: 602px;
+        height: 380px;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -298,16 +311,16 @@ export default {
     //   background: url("../assets/images/close-x.png") no-repeat top center;
       height: 66px;
       width: 66px;
-      cursor: pointer;
       position: absolute;
-      top: 34px;
-      right: 36px;
-      background: #000000;
+      top: 7px;
+      right: 20px;
+      cursor: pointer;
+      // background: #000000;
   }
     .m--close {
       height: 66px;
       width: 66px;
-      background: #000;
+      // background: #000;
       position: absolute;
       top: 18px;
       right: 20px;
@@ -328,14 +341,16 @@ export default {
       // height: 105px;
       margin: 0 auto;
       ul {
-        height: 324px;
-        // width: 602px;
+        // height: 324px;
+        height: 420px;
+        // width: ;
+        width: 602px;
         display: flex;
         justify-content: space-around;
         align-items: center;
         // background-color: #f8dbb8;
         border-radius: 10px;
-        padding: 60px 20px;
+        // padding: 60px 20px;
         box-sizing:border-box;
         width: 600px;
         margin: 0 auto;

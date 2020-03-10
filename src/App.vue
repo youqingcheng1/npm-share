@@ -23,16 +23,17 @@ export default {
   },
   data () {
     return {
-      urlBack:'https://cdn-activities.mini1.cn/nba/share/images/share_img.png',
+      urlBack:'http://activities-test.mini.me/fe/sales/share-img/share-box2.png',
       msg: 'Welcome to Your Vue.js App',
       shareShow:false,
       shareData:{
-        url:'',
+        url:`http://activities-test.mini.me/fe/sales/share-img/share-pc-img.jpg`,
         urlFriend:'',
-        friendImg:'',
-        title:'',
-        imgUrl:'https://cdn-activities.mini1.cn/nba/share/images/share_img.png',
-        content:''
+        friendImg:`http://activities-test.mini.me/fe/sales/share-img/share-pc-img.jpg`,
+        title:'迷你4周年，星灵闪耀',
+        imgUrl:`http://activities-test.mini.me/fe/sales/share-img/share-m-img.jpg`,
+        content:'迷你世界迎来了4周年欢乐庆典，我们的新伙伴星灵也随之登场，想不想了解关于星灵的小故事呢？快来迷你世界4周年星灵闪耀活动页面看看吧！',
+        desc:'111'
       }
     }
   },

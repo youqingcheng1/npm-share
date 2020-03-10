@@ -22,6 +22,7 @@ yarn build
     title:'',
     imgUrl:'',
     content:''
+    desc:''
 }  分享数据
 :backgroundUrl  传入背景图
 :friendIcon 是否显示好友图标
