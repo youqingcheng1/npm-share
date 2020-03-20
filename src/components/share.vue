@@ -8,9 +8,9 @@
           <li v-for="(item, index) in shareIcon" :key="index">
             <a href="javascript:;" @click="handleShare(item.event)"></a>
           </li>
-          <li class="friendIcon" v-if="friendIcon">
+          <!-- <li class="friendIcon" v-if="friendIcon">
             <a href="javascript:;" @click="friendList"></a>
-          </li>
+          </li> -->
           <transition name="wechat">
             <div class="pc--Wechat-box" v-if="`${$typePage}=='pc'`&& wechatStatus">
                 <div id="qrcode"></div>
@@ -358,7 +358,7 @@ export default {
           width: 85px;
           height: 85px;
           a {
-            background: url("../assets/images/share-icon-m.png") no-repeat top
+            background: url("~../assets/images/share-icon-m.png") no-repeat top
               center/525px 105px;
             width: 85px;
             height: 85px;
